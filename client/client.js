@@ -17,10 +17,6 @@ Template.body.helpers({
 		return Tasks.find({packParent: selected_pack}, {sort: {dateCreation: -1}});
 	},
 
-	packs: function() {
-		return Packs.find({}, {sort: {dateCreation: -1}});
-	},
-
 	projects: function() {
 		return Projects.find({}, {sort: {dateCreation: -1}});
 	}
@@ -56,6 +52,7 @@ Template.body.events({
 // PROJECT
 
 Template.project.helpers({
+
 	selectedProject: function() {
 
 		var project_id = this._id;
