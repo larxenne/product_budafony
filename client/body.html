@@ -25,7 +25,7 @@
 
 			<div class="new_task_form_container">
 				<form id="new-message" class="new-message">
-				<input id="message" type="text" name="text" placeholder="Add a new task">
+					<input id="message" type="text" name="text" placeholder="Add a new task">
 					<input type="submit">
 				</form>
 			</div>
@@ -45,9 +45,9 @@
 
 <template name="project">
 
-	<li class="project_container {{selectedClass}}" data-id="{{_id}}">
+	<li class="project_container {{selectedProject}}" data-id="{{_id}}">
 		<button class="delete">&times;</button>
-		<span>{{title}}</span>
+		<div class="project_title">{{title}}</div>
 		<button class="add_pack">ADD A PACK</button>
 		<ul>
 			{{#each packs}}
@@ -60,8 +60,9 @@
 <!-- PACK -->
 
 <template name="pack">
-	<li class="pack_container {{selectedClass}}" data-id="{{_id}}">
+	<li class="pack_container {{selectedPack}} {{#if isCompleted}}completed_pack{{/if}}" data-id="{{_id}}">
 		<button class="delete">&times;</button>
+		<input type="checkbox" checked="{{isCompleted}}" class="complete" />
 		<span>Pack {{letter}}</span>
 	</li>
 </template>

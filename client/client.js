@@ -56,10 +56,30 @@ Template.body.events({
 // PROJECT
 
 Template.project.helpers({
+	selectedProject: function() {
+
+		var project_id = this._id;
+		var selected_project = Session.get('selectedProject');
+
+		if (project_id == selected_project) {
+			return "selected_project";
+		};
+
+	}
 
 });
 
 Template.project.events({
+	"click .project_container": function(event) {
+
+		var project_id = this._id;
+
+		Session.set('selectedProject', project_id);
+
+		var selected_project = Session.get('selectedProject');
+		
+	},
+
 	"click .add_pack": function() {
 		Meteor.call("addPack", this._id);
 	},
@@ -72,7 +92,7 @@ Template.project.events({
 // PACK
 
 Template.pack.helpers({
-	selectedClass: function() {
+	selectedPack: function() {
 
 		var pack_id = this._id;
 		var selected_pack = Session.get('selectedPack');
@@ -80,7 +100,6 @@ Template.pack.helpers({
 		if (pack_id == selected_pack) {
 			return "selected_pack";
 		};
-
 	}
 });
 
@@ -99,6 +118,13 @@ Template.pack.events({
 	"click .delete": function(event) {
 		Meteor.call("deletePack", this._id);
 		var selected_pack = Session.get('');
+	},
+
+	"click .complete": function(event) {
+
+		var is_checked = !this.isCompleted;
+
+		Meteor.call("completePack", this._id, is_checked);
 	},
 });
 

@@ -80,6 +80,11 @@ Schemas.Pack = new SimpleSchema({
     max: 100
   },
 
+  isCompleted: {
+    type: Boolean,
+    label: "isCompleted"
+  },
+
   dateCreation: {
     type: Date,
     label: "Created at"

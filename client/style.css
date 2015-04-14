@@ -86,75 +86,83 @@ header .hide-completed {
 	float: right;
 }
 
+/*PANEL RIGHT*/
 
-/*@media (max-width: 600px) {
-	li {
-		padding: 12px 15px;
-	}
+.new_task_form_container {
+	margin-bottom: 20px;
+}
 
-	.search {
-		width: 150px;
-		clear: both;
-	}
+/*PROJECT*/
 
-	.new-task input {
-		padding-bottom: 5px;
-	}
-	}*/
+.project_container {
+	border-bottom: #eee solid 1px;
+	cursor: pointer;
+}
 
+.project_title {
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 5px;
+}
 
-	/*LARXENNE*/
+/*PACK*/
 
-	/*PANEL RIGHT*/
+.pack_container {
+	margin-top: 10px;
+	border-top: #eee solid 1px;
+	cursor: pointer;
+}
 
-	.new_task_form_container {
-		margin-bottom: 20px;
-	}
+.project_container > ul > .pack_container {
+	display: none;
+}
 
-	/*PACK*/
+.selected_project > ul > .pack_container {
+	display: block;	
+}
 
-	.pack_container {
-		cursor: pointer;
-	}
+.completed_pack {
+	background: lightgrey;
+}
 
-	/*TASK*/
+/*TASK*/
 
-	.task_container {
-		border-bottom: #eee solid 1px;
-	}
+.task_container {
+	border-bottom: #eee solid 1px;
+}
 
-	.new-message, .task_color_form {
-		display: inline-block;
-	}
+.new-message, .task_color_form {
+	display: inline-block;
+}
 
-	/*Task color*/
+/*Task color*/
 
-	.task_white {
-		background-color: white;
-	}
+.task_white {
+	background-color: white;
+}
 
-	.task_yellow {
-		background-color: yellow;
-	}
+.task_yellow {
+	background-color: yellow;
+}
 
-	.task_pink {
-		background-color: pink;
-	}
+.task_pink {
+	background-color: pink;
+}
 
-	.task_blue {
-		background-color: blue;
-	}
+.task_blue {
+	background-color: blue;
+}
 
-	.task_green {
-		background-color: green;
-	}
+.task_green {
+	background-color: green;
+}
 
-	/*MESSAGE*/
+/*MESSAGE*/
 
-	.message_form_container {
-		margin-bottom: 20px;
-	}
+.message_form_container {
+	margin-bottom: 20px;
+}
 
-	.message_container_list {
-		border-top: #eee solid 1px;
-	}
+.message_container_list {
+	border-top: #eee solid 1px;
+}
