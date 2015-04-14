@@ -5,13 +5,109 @@
 
 			{{> loginButtons}}
 
-
 		</header>
 
-		
+		<div class="pannel_left">
+
+			<form id="new-project" class="new-project">
+				<input id="project" type="text" name="text" placeholder="Project's name">
+				<input type="submit">
+			</form>
+
+			<ul>
+				{{#each projects}}
+				{{> project}}
+				{{/each}}
+			</ul>
+			
+		</div>
+		<div class="pannel_right">
+
+			<div class="new_task_form_container">
+				<form id="new-message" class="new-message">
+				<input id="message" type="text" name="text" placeholder="Add a new task">
+					<input type="submit">
+				</form>
+			</div>
+
+			<ul>
+				{{#each tasks}}
+				{{> task}}
+				{{/each}}
+			</ul>
+
+		</div>
 	</div>
+
 </body>
 
-<template name="message">
-	
+<!-- PROJECT -->
+
+<template name="project">
+
+	<li class="project_container {{selectedClass}}" data-id="{{_id}}">
+		<button class="delete">&times;</button>
+		<span>{{title}}</span>
+		<button class="add_pack">ADD A PACK</button>
+		<ul>
+			{{#each packs}}
+			{{> pack}}
+			{{/each}}
+		</ul>
+	</li>
 </template>
+
+<!-- PACK -->
+
+<template name="pack">
+	<li class="pack_container {{selectedClass}}" data-id="{{_id}}">
+		<button class="delete">&times;</button>
+		<span>Pack {{letter}}</span>
+	</li>
+</template>
+
+<!-- TASK -->
+
+<template name="task">
+	<li class="{{colorTask}} task_container">
+		<button class="delete">&times;</button>
+		
+		<span class="text"> <strong>{{number}}: </strong>{{title}}</span>
+
+		<div class="message_form_container">
+
+			<form class="new-message">
+				<input type="text" class="message" placeholder="Type your message here" name="message">
+				<input type="submit">
+			</form>
+
+			<form class="task_color_form">
+				<select name="task_color" class="task_color">
+					<option {{ selectedColor 'white' }} value="white">Todo</option>
+					<option {{ selectedColor 'yellow' }} value="yellow">Pending</option>
+					<option {{ selectedColor 'green' }} value="green">Done</option>
+					<option {{ selectedColor 'pink' }}  value="pink">Refused</option>
+					<option {{ selectedColor 'blue' }}  value="blue">Question</option>
+				</select>
+			</form>
+
+		</div>
+
+		<ul class="message_container">
+			{{#each messages}}
+			{{> message}}
+			{{/each}}
+		</ul>
+		
+	</li>
+</template>
+
+<!-- MESSAGE -->
+
+<template name="message">
+	<li class="message_container_list">
+		<button class="delete">&times;</button>
+		<span> <strong>{{owner}}</strong> - {{text}}</span>
+	</li>
+</template>
+

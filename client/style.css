@@ -1,4 +1,4 @@
-/* CSS declarations go here */
+/*GENERAL*/
 
 body {
 	font-family: sans-serif;
@@ -19,10 +19,22 @@ body {
 }
 
 .container {
-	max-width: 600px;
+	max-width: 1024px;
 	margin: 0 auto;
 	min-height: 100%;
 	background: white;
+}
+
+.pannel_left {
+	display: inline-block;
+	width: 29%;
+	border-right: 1px solid black;
+}
+
+.pannel_right {
+	display: inline-block;
+	float: right;
+	width: 70%;
 }
 
 header {
@@ -46,28 +58,19 @@ h1 {
 
 form {
 	margin-top: 10px;
-	margin-bottom: -10px;
 	position: relative;
-}
-
-.new-task input {
-	box-sizing: border-box;
-	padding: 10px 0;
-	background: transparent;
-	border: none;
-	width: 100%;
-	padding-right: 80px;
-	font-size: 1em;
-}
-
-.new-task input:focus{
-	outline: 0;
 }
 
 ul {
 	margin: 0;
 	padding: 0;
 	background: white;
+}
+
+li {
+	position: relative;
+	list-style: none;
+	padding: 15px;
 }
 
 .delete {
@@ -79,39 +82,12 @@ ul {
 	position: relative;
 }
 
-li {
-	position: relative;
-	list-style: none;
-	padding: 15px;
-	border-bottom: #eee solid 1px;
-}
-
-li .text {
-	margin-left: 10px;
-}
-
-li.checked {
-	color: #888;
-}
-
-li.checked .text {
-	text-decoration: line-through;
-}
-
-li.private {
-	background: #eee;
-	border-color: #ddd;
-}
-
 header .hide-completed {
 	float: right;
 }
 
-.toggle-private {
-	margin-left: 5px;
-}
 
-@media (max-width: 600px) {
+/*@media (max-width: 600px) {
 	li {
 		padding: 12px 15px;
 	}
@@ -124,4 +100,61 @@ header .hide-completed {
 	.new-task input {
 		padding-bottom: 5px;
 	}
-}
+	}*/
+
+
+	/*LARXENNE*/
+
+	/*PANEL RIGHT*/
+
+	.new_task_form_container {
+		margin-bottom: 20px;
+	}
+
+	/*PACK*/
+
+	.pack_container {
+		cursor: pointer;
+	}
+
+	/*TASK*/
+
+	.task_container {
+		border-bottom: #eee solid 1px;
+	}
+
+	.new-message, .task_color_form {
+		display: inline-block;
+	}
+
+	/*Task color*/
+
+	.task_white {
+		background-color: white;
+	}
+
+	.task_yellow {
+		background-color: yellow;
+	}
+
+	.task_pink {
+		background-color: pink;
+	}
+
+	.task_blue {
+		background-color: blue;
+	}
+
+	.task_green {
+		background-color: green;
+	}
+
+	/*MESSAGE*/
+
+	.message_form_container {
+		margin-bottom: 20px;
+	}
+
+	.message_container_list {
+		border-top: #eee solid 1px;
+	}
