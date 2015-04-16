@@ -3,7 +3,7 @@
 body {
 	font-family: sans-serif;
 	background-color: #315481;
-	background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+	background-image: linear-gradient(to bottom, #35B854, #ABD1B4 100%);
 	background-attachment: fixed;
 
 	position: absolute;
@@ -39,7 +39,7 @@ body {
 
 header {
 	background: #d2edf4;
-	background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+	background-image: linear-gradient(to bottom, #5CFF82, #CCFFD8 100%);
 	padding: 20px 15px 15px 15px;
 	position: relative;
 }
@@ -121,8 +121,22 @@ header .hide-completed {
 	display: block;	
 }
 
-.completed_pack {
-	background: lightgrey;
+.selected_pack {
+	background-color: lightgrey;
+}
+
+.completed_pack > form > input{
+	text-decoration: line-through;
+}
+
+.pack_title_form {
+	display: inline-block;
+}
+
+.pack_title {
+	border: none;
+	display: inline-block;
+	width: 160px;
 }
 
 /*TASK*/
@@ -135,6 +149,15 @@ header .hide-completed {
 	display: inline-block;
 }
 
+.message_container {
+	transistion-duration: 2s;
+	display: none;
+}
+
+.selected_task > .message_container {
+	display: block;
+}
+
 /*Task color*/
 
 .task_white {
@@ -142,19 +165,19 @@ header .hide-completed {
 }
 
 .task_yellow {
-	background-color: yellow;
+	background-color: #FCFA77;
 }
 
 .task_pink {
-	background-color: pink;
+	background-color: #FFC7F5;
 }
 
 .task_blue {
-	background-color: blue;
+	background-color: #77C7FC;
 }
 
 .task_green {
-	background-color: green;
+	background-color: #77FC80;
 }
 
 /*MESSAGE*/

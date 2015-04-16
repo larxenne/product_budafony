@@ -123,6 +123,16 @@ Template.pack.events({
 
 		Meteor.call("completePack", this._id, is_checked);
 	},
+
+	"submit .pack_title_form": function(event) {
+
+		var title = event.target.pack_title.value;
+		console.log(title);
+		
+		Meteor.call("changeTitlePack", this._id, title);
+
+		return false;
+	}
 });
 
 // TASK
@@ -147,6 +157,16 @@ Template.task.helpers({
 			return "";
 		}
 
+	},
+
+	selectedTask: function() {
+
+		var task_id = this._id;
+		var selected_task = Session.get('selectedTask');
+
+		if (task_id == selected_task) {
+			return "selected_task";
+		};
 	}
 });
 
@@ -169,6 +189,16 @@ Template.task.events({
 		var color = event.target.value;
 
 		Meteor.call("changeColorTask", this._id, color);
+	},
+
+	"click .task_container": function(event) {
+
+		var task_id = this._id;
+
+		Session.set('selectedTask', task_id);
+
+		var selected_pack = Session.get('selectedTask');
+
 	}
 
 });

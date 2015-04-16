@@ -77,7 +77,14 @@ Schemas.Pack = new SimpleSchema({
   letter: {
     type: String,
     label: "Letter",
-    max: 100
+    max: 1
+  },
+
+  title: {
+    type: String,
+    label: "Title",
+    max:50,
+    optional: true
   },
 
   isCompleted: {

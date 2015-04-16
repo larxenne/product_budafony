@@ -1,7 +1,7 @@
 <body>
 	<div class="container">
 		<header>
-			<h1>Budafony Chat</h1>
+			<h1>Budafony Product</h1>
 
 			{{> loginButtons}}
 
@@ -63,14 +63,16 @@
 	<li class="pack_container {{selectedPack}} {{#if isCompleted}}completed_pack{{/if}}" data-id="{{_id}}">
 		<button class="delete">&times;</button>
 		<input type="checkbox" checked="{{isCompleted}}" class="complete" />
-		<span>Pack {{letter}}</span>
+		<form class="pack_title_form">
+			<input class="pack_title" name="pack_title" type="text" value="{{#if title}} {{title}} {{else}} Pack {{letter}} {{/if}}">
+		</form>
 	</li>
 </template>
 
 <!-- TASK -->
 
 <template name="task">
-	<li class="{{colorTask}} task_container">
+	<li class="{{colorTask}} task_container {{selectedTask}}">
 		<button class="delete">&times;</button>
 		
 		<span class="text"> <strong>{{number}}: </strong>{{title}}</span>
